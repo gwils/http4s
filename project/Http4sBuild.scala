@@ -55,9 +55,11 @@ object Http4sBuild extends Build {
     }
   def jawnStreamzVersion(scalazVersion: String) =
     "0.9.0" + scalazCrossBuildSuffix(scalazVersion)
+  def argonautVersion(scalazVersion: String) =
+    "6.1" + scalazCrossBuildSuffix(scalazVersion)
 
   lazy val alpnBoot            = "org.mortbay.jetty.alpn"    % "alpn-boot"               % "8.1.7.v20160121"
-  lazy val argonaut            = "io.argonaut"              %% "argonaut"                % "6.2-M1"
+  def argonaut(scalazVersion: String) = "io.argonaut"        %% "argonaut"                % argonautVersion(scalazVersion)
   lazy val asyncHttpClient     = "org.asynchttpclient"       % "async-http-client"       % "2.0.2"
   lazy val blaze               = "org.http4s"               %% "blaze-http"              % "0.12.0"
   lazy val circeGeneric        = "io.circe"                 %% "circe-generic"           % circeJawn.revision

@@ -129,7 +129,7 @@ lazy val argonaut = libraryProject("argonaut")
   .settings(
     description := "Provides Argonaut codecs for http4s",
     libraryDependencies ++= Seq(
-      Http4sBuild.argonaut,
+      Http4sBuild.argonaut(scalazVersion.value),
       jawnParser
     )
   )
